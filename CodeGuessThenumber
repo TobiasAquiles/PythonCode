@@ -1,0 +1,38 @@
+from art import logo
+from replit import clear
+import random
+clear
+print(logo)#Number Guessing Game Objectives:
+diff=input("Enter the level of difficulty. Hard or Easy H,E.\n").capitalize()
+attempts=0
+if diff=="H":
+  attempts=5
+else:
+  attempts=10
+
+numeror=random.randint(1,100)
+while attempts>0:
+  numerog=int(input("Guess a number.\n"))
+  attempts-=1
+  if numeror==numerog:
+    print(f"You win, the number was {numerog}")
+    attempts=0
+  elif numerog >numeror and attempts>0:
+    print(f"That number is too high, try again. \n You have now {attempts} lives")
+  elif numerog>numeror and attempts==0:
+    print(f"That number is too high.You lose with 0 attempts left. The number was {numeror}")
+  elif numerog<numeror and attempts>0:
+    print(f"That number is too low.try again. \n You have now {attempts} lives")
+
+  elif numerog<numeror and attempts==0:
+    print(f"That number is too low.You lose with 0 attempts left. The number was {numeror}")
+
+  
+# Include an ASCII art logo.
+# Allow the player to submit a guess for a number between 1 and 100.
+# Check user's guess against actual answer. Print "Too high." or "Too low." depending on the user's answer. 
+# If they got the answer correct, show the actual answer to the player.
+# Track the number of turns remaining.
+# If they run out of turns, provide feedback to the player. 
+# Include two different difficulty levels (e.g., 10 guesses in easy mode, only 5 guesses in hard mode).
+
